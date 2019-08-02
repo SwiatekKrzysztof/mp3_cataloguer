@@ -47,9 +47,13 @@ public class rootControl {
     }
 
     public void chooseCatalogueDirectory(ActionEvent actionEvent){
-        catalogPathTextField.setText("Clicked!");
-
-        System.out.println("Klik2");
+        Stage stage = new Stage();
+        DirectoryChooser directoryChooser = new DirectoryChooser();
+        directoryChooser.setTitle("Open Resource File");
+        File selectedDirectory = directoryChooser.showDialog(stage);
+        if(selectedDirectory!=null){
+            catalogPathTextField.setText(selectedDirectory.getAbsolutePath());
+        }
     }
     public void createCatalogue(ActionEvent actionEvent){
         SongsService songsService = new SongsService();

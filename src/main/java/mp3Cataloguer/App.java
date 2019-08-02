@@ -24,7 +24,7 @@ public class App extends Application
         Parent root =
                 FXMLLoader.load(
                         getClass()
-                                .getResource("/root.fxml"));
+                                .getResource("/rootTest.fxml"));
 
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
