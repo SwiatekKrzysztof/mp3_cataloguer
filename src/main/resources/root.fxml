@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:controller="mp3Cataloguer.controller.rootControl" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="672.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="libraryPathTextField" layoutX="27.0" layoutY="208.0" prefHeight="31.0" prefWidth="303.0" promptText="Directory of your music library" />
+      <Button onAction="#chooseLibraryDirectory" fx:id="chooseLibraryDirectory" layoutX="371.0" layoutY="208.0" mnemonicParsing="false" text="Choose" />
+      <TextField fx:id="catalogPathTextField" layoutX="27.0" layoutY="277.0" prefHeight="31.0" prefWidth="303.0" promptText="Directory in witch catalog will be created" />
+      <Button onAction="#chooseCatalogueDirectory" fx:id="chooseCatalogueDirectory" layoutX="371.0" layoutY="277.0" mnemonicParsing="false" text="Choose" />
+      <Button onAction="#createCatalogue" fx:id="submit" layoutX="372.0" layoutY="370.0" mnemonicParsing="false" text="Create!" />
+   </children>
+</AnchorPane>
