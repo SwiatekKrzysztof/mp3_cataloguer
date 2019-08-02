@@ -9,8 +9,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.*;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
 public class SongsService {
@@ -28,8 +26,6 @@ public class SongsService {
                 addToList(mp3File);
             }
         } catch (IOException | DirectoryIteratorException x) {
-            // IOException can never be thrown by the iteration.
-            // In this snippet, it can only be thrown by newDirectoryStream.
             System.err.println(x);
         }
         createFile(catalogPath);

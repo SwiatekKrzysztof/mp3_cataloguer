@@ -1,16 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:controller="mp3Cataloguer.controller.rootControl" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="672.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="471.0" style="-fx-background-color: #0D0208; -fx-border-color: #0D0208;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mp3Cataloguer.controller.rootControl">
    <children>
-      <TextField fx:id="libraryPathTextField" layoutX="27.0" layoutY="208.0" prefHeight="31.0" prefWidth="303.0" promptText="Directory of your music library" />
-      <Button onAction="#chooseLibraryDirectory" fx:id="chooseLibraryDirectory" layoutX="371.0" layoutY="208.0" mnemonicParsing="false" text="Choose" />
-      <TextField fx:id="catalogPathTextField" layoutX="27.0" layoutY="277.0" prefHeight="31.0" prefWidth="303.0" promptText="Directory in witch catalog will be created" />
-      <Button onAction="#chooseCatalogueDirectory" fx:id="chooseCatalogueDirectory" layoutX="371.0" layoutY="277.0" mnemonicParsing="false" text="Choose" />
-      <Button onAction="#createCatalogue" fx:id="submit" layoutX="372.0" layoutY="370.0" mnemonicParsing="false" text="Create!" />
+      <Button fx:id="chooseLibraryDirectory" layoutX="337.0" layoutY="177.0" mnemonicParsing="false" onAction="#chooseLibraryDirectory" style="-fx-background-color: #0D0208; -fx-border-color: #008F11; -fx-border-width: 2;" text="Browse" textFill="#008f11">
+         <font>
+            <Font name="SixEightZeroNineChargen-Regular" size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="libraryPathTextField" layoutX="27.0" layoutY="177.0" prefHeight="40.0" prefWidth="303.0" promptText="Choose directory" style="-fx-border-color: #008F11; -fx-border-width: 2; -fx-background-color: #0D0208; -fx-text-fill: #00FF41; -fx-prompt-text-fill: #003B00;">
+         <font>
+            <Font name="SixEightZeroNineChargen-Regular" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="catalogPathTextField" layoutX="27.0" layoutY="278.0" prefHeight="40.0" prefWidth="303.0" promptText="Choose directory" style="-fx-border-color: #008F11; -fx-border-width: 2; -fx-background-color: #0D0208; -fx-text-fill: #00FF41; -fx-prompt-text-fill: #003B00;">
+         <font>
+            <Font name="SixEightZeroNineChargen-Regular" size="14.0" />
+         </font>
+      </TextField>
+      <Button fx:id="chooseCatalogueDirectory" layoutX="337.0" layoutY="278.0" mnemonicParsing="false" onAction="#chooseCatalogueDirectory" style="-fx-background-color: #0D0208; -fx-border-color: #008F11; -fx-border-width: 2;" text="Browse" textFill="#008f11">
+         <font>
+            <Font name="SixEightZeroNineChargen-Regular" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="submit" layoutX="159.0" layoutY="359.0" mnemonicParsing="false" onAction="#createCatalogue" prefHeight="61.0" prefWidth="153.0" style="-fx-background-color: #0D0208; -fx-border-color: #008F11; -fx-border-width: 4;" text="Create!" textFill="#008f11">
+         <font>
+            <Font name="SixEightZeroNineChargen-Regular" size="24.0" />
+         </font>
+      </Button>
+      <Label layoutX="27.0" layoutY="129.0" prefHeight="31.0" prefWidth="303.0" text="Directory of your music library" textFill="#008f11">
+         <font>
+            <Font name="SixEightZeroNineChargen-Regular" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="239.0" prefHeight="31.0" prefWidth="362.0" text="Directory in witch catalog will be created" textFill="#008f11">
+         <font>
+            <Font name="SixEightZeroNineChargen-Regular" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="37.0" layoutY="26.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="97.0" prefWidth="397.0" text="Catalogue your Music!" textFill="#008f11">
+         <font>
+            <Font name="SixEightZeroNineChargen-Regular" size="24.0" />
+         </font>
+      </Label>
+      <HBox fx:id="windowBarCustom" layoutY="-2.0" nodeOrientation="RIGHT_TO_LEFT" onDragDetected="#startMoveWindow" onMouseDragged="#moveWindow" onMouseReleased="#endMoveWindow" prefHeight="31.0" prefWidth="471.0" style="-fx-border-color: #003B00; -fx-border-width: 2; -fx-background-color: #003B00;">
+         <children>
+            <Label fx:id="closeLabel" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#close" prefHeight="17.0" prefWidth="19.0" text="X" textAlignment="CENTER" textFill="#0d0208">
+               <font>
+                  <Font name="SixEightZeroNineChargen-Regular" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

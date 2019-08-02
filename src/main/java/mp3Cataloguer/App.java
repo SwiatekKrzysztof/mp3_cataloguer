@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import mp3Cataloguer.service.SongsService;
 
 import java.io.IOException;
@@ -24,9 +25,12 @@ public class App extends Application
         Parent root =
                 FXMLLoader.load(
                         getClass()
-                                .getResource("/rootTest.fxml"));
+                                .getResource("/root.fxml"));
+
+        primaryStage.initStyle(StageStyle.TRANSPARENT);
 
         primaryStage.setScene(new Scene(root));
+
         primaryStage.show();
 
 
